@@ -80,6 +80,7 @@ contract BnbStaking is Ownable {
         address _wbnb
     ) public {
         rewardToken = _rewardToken;
+        // 1000
         rewardPerBlock = _rewardPerBlock;
         startBlock = _startBlock;
         bonusEndBlock = _bonusEndBlock;

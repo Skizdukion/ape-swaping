@@ -39,6 +39,12 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         args: [token.address, splitBar.address, deployer, 15, 0, 10],
     })
 
+    const daoToken = await ethers.getContract("DaoToken")
+    const daoSplit = await ethers.getContract("DaoSplit")
+    const master = await ethers.getContract("Master")
+    daoToken.transferOwnership(master.address)
+    daoSplit.transferOwnership(master.address)
+
     // // const daoFactory = await ethers.getContractAt("DaoFactory")
 };
 module.exports.tags = ["all", "masterchef"];

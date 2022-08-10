@@ -78,7 +78,8 @@ contract MasterApe is Ownable {
     // The block number when BANANA mining starts.
     uint256 public startBlock;
 
-    event Deposit(address indexed user, uint256 indexed pid, uint256 amount);
+    event Deposit(address indexed user, uint256 indexed 
+    , uint256 amount);
     event Withdraw(address indexed user, uint256 indexed pid, uint256 amount);
     event EmergencyWithdraw(address indexed user, uint256 indexed pid, uint256 amount);
 
