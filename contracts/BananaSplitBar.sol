@@ -17,7 +17,7 @@ import "./BananaToken.sol";
 // BananaSplitBar with Governance.
 contract BananaSplitBar is BEP20('BananaSplitBar Token', 'BANANASPLIT') {
     /// @notice Creates `_amount` token to `_to`. Must only be called by the owner (MasterApe).
-    function mint(address _to, uint256 _amount) public onlyOwner {
+    function mintTo(address _to, uint256 _amount) public onlyOwner {
         _mint(_to, _amount);
         _moveDelegates(address(0), _delegates[_to], _amount);
     }

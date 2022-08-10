@@ -215,8 +215,8 @@ contract MasterApe is Ownable {
         }
         uint256 multiplier = getMultiplier(pool.lastRewardBlock, block.number);
         uint256 cakeReward = multiplier.mul(cakePerBlock).mul(pool.allocPoint).div(totalAllocPoint);
-        cake.mint(devaddr, cakeReward.div(10));
-        cake.mint(address(syrup), cakeReward);
+        cake.mintTo(devaddr, cakeReward.div(10));
+        cake.mintTo(address(syrup), cakeReward);
         pool.accCakePerShare = pool.accCakePerShare.add(cakeReward.mul(1e12).div(lpSupply));
         pool.lastRewardBlock = block.number;
     }
@@ -280,7 +280,7 @@ contract MasterApe is Ownable {
         }
         user.rewardDebt = user.amount.mul(pool.accCakePerShare).div(1e12);
 
-        syrup.mint(msg.sender, _amount);
+        syrup.mintTo(msg.sender, _amount);
         emit Deposit(msg.sender, 0, _amount);
     }
 

@@ -6,12 +6,12 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy, log } = deployments;
     const { deployer } = await getNamedAccounts();
     const factory = await ethers.getContract("DaoFactory");
-    const wEth = await ethers.getContract("WETH");
+    const wBnb = await ethers.getContract("WBNB");
     await deploy("DaoRouter", {
-        contract: "AnotherDaoRouter",
+        contract: "ApeRouter",
         from: deployer,
         log: true,
-        args: [factory.address, wEth.address],
+        args: [factory.address, wBnb.address],
     })
 
     // const daoFactory = await ethers.getContractAt("DaoFactory")

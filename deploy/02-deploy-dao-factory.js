@@ -7,7 +7,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deployer } = await getNamedAccounts();
 
     await deploy("DaoFactory", {
-        contract: "AnotherDaoFactory",
+        contract: "ApeFactory",
         from: deployer,
         log: true,
         args: [deployer],
